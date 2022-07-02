@@ -12,6 +12,17 @@ app.get('/', (req, res) => {
     res.send('hello world')
 })
 
+
+// Test
+app.get('/timestamp', (req, res) => {
+    const timestp = new Date()
+    res.status(200).send({
+        nome: 'Test API',
+        time: timestp.toJSON()
+    })
+})
+  
+
 // middleware to deal with 404 error
 app.use((req, res, next) => {
     let err = {
